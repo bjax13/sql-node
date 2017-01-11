@@ -30,7 +30,7 @@ We are going to be working with a single table, products.  It's schema will look
   * read_product
   * update_product
   * delete_product
-  
+
 * Create a working SQL query for each one.  You can use pgAdmin to test your queries against the database.
 
 __create_product__
@@ -65,7 +65,7 @@ This query will take in an id.  Find and delete the product with the id.
     * Inside of GetOne, use the read_product query
     * Inside of Update, use the update_product query
     * Inside of Delete, use the delete_product query
-    
+
 
 ## Create endpoints
 
@@ -99,4 +99,3 @@ __Sample Urls__
 ## Copyright
 
 © DevMountain LLC, 2016. Unauthorized use and/or duplication of this material without express and written permission from DevMountain, LLC is strictly prohibited. Excerpts and links may be used, provided that full and clear credit is given to DevMountain with appropriate and specific direction to the original content.
-# sql-node
