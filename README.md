@@ -33,7 +33,7 @@ We are going to be working with a single table, products.  It's schema will look
 
 * Create a working SQL query for each one.  You can use pgAdmin to test your queries against the database.
 
-__create_product__
+_*create_product__
 
 This query will need to take the 4 parameters defined in the schema and insert a record into the database.
 
@@ -99,3 +99,18 @@ __Sample Urls__
 ## Copyright
 
 © DevMountain LLC, 2016. Unauthorized use and/or duplication of this material without express and written permission from DevMountain, LLC is strictly prohibited. Excerpts and links may be used, provided that full and clear credit is given to DevMountain with appropriate and specific direction to the original content.
+
+
+CREATE TABLE products(
+  productId SERIAL PRIMARY KEY NOT NULL,
+  productName VARCHAR(255) NOT NULL,
+  productDescription TEXT ,
+  productPrice DECIMAL(25,5),
+  productImgUrl text
+);
+
+insert into products (productName, productDescription, productPrice, productImgUrl) values ('water', 'the wet stuff' , 21.99, 'https://img1.etsystatic.com/003/0/6955258/il_fullxfull.401475521_i2qh.jpg');
+insert into products (productName, productDescription, productPrice, productImgUrl) values ('earth', 'like a rock' , 21.99, 'https://img1.etsystatic.com/003/0/6955258/il_fullxfull.401475521_i2qh.jpg');
+insert into products (productName, productDescription, productPrice, productImgUrl) values ('fire', 'it burns us' , 21.99, 'https://img1.etsystatic.com/003/0/6955258/il_fullxfull.401475521_i2qh.jpg');
+insert into products (productName, productDescription, productPrice, productImgUrl) values ('air', 'soft yet flexible' , 21.99, 'https://img1.etsystatic.com/003/0/6955258/il_fullxfull.401475521_i2qh.jpg');
+insert into products (productName, productDescription, productPrice, productImgUrl) values ('extra', NULL , 21.99, 'https://img1.etsystatic.com/003/0/6955258/il_fullxfull.401475521_i2qh.jpg');
