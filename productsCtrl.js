@@ -13,17 +13,28 @@ module.exports= {
   },
   newProduct: function (req, res, next) {
     const newProduct = req.body;
-    db.create_product([newProduct.name, newProduct.description, newProduct.price, newProduct.imgUrl],function (err, result) {
-      if (err) {
-        res.status(500).send(err);
-      }else {
-        res.status(200).send(result);
-      }
-    });
+    if (true) {
+      db.create_product([newProduct.name, newProduct.description,
+        newProduct.price, newProduct.imgUrl],function (err, result) {
+        if (err) {
+          res.status(500).send(err);
+        }else {
+          res.status(200).send('information added to database' + newProduct);
+        }
+      });
+    }else {
+      res.status(500).json('missing a name, discription, price or imgUrl');
+    }
   },
   destroyProduct: function (req, res, next) {
-    console.log(req.params);
-    res.status(200).send('it works');
+    const id = req.params.id;
+    db.delete_product([id],function (err, response) {
+      if (err) {
+        res.status(500).json(err);
+      }else {
+        res.status(200).json('Successfully deleted id:' + id);
+      }
+    });
   },
   getOne: function (req, res, next) {
     const id = req.params.id;
@@ -44,7 +55,7 @@ module.exports= {
 
     const id = req.params.id;
     const description = req.body.description;
-    console.log(id +'id & d-' + description);
+
     if (id && description) {
       db.update_product([id,description], function (err, response) {
         if(!response.length){
